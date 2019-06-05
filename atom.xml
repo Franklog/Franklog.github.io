@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>迪哥私人博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-06-05T03:16:36.773Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>元古</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo部署Git问题解决</title>
+    <link href="http://yoursite.com/2019/06/05/hexo%E9%83%A8%E7%BD%B2Git%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2019/06/05/hexo部署Git问题解决/</id>
+    <published>2019-06-05T01:11:06.401Z</published>
+    <updated>2019-06-05T03:16:36.773Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1、hexo报找不到Git库"><a href="#1、hexo报找不到Git库" class="headerlink" title="1、hexo报找不到Git库"></a>1、hexo报找不到Git库</h1><p><strong>解决方法：</strong></p><ol><li>Repository name填写时，必须是以github.io结尾</li><li>deploy:<pre><code>type: gitrepo: https://github.com/Repository name/Repository name.github.io.gitbranch: master</code></pre><img src="https://i.imgur.com/oZzwhzB.png" alt></li></ol><hr><h1 id="2、报错：spawn-git-ENOENT"><a href="#2、报错：spawn-git-ENOENT" class="headerlink" title="2、报错：spawn git ENOENT"></a>2、报错：spawn git ENOENT</h1><p>Error: spawn git ENOENT      at exports._errnoException (util.js:746:11)      at Process.ChildProcess._handle.onexit (child_process.js:1053:32)      at child_process.js:1144:20)      at process._tickCallback (node.js:355:11)</p><p><strong>解决方法</strong></p><ol><li>未添加Git环境变量引起，添加Git与git管理库的环境变量即可；</li></ol><hr><h1 id="3、报错：ERROR-Deployer-not-found-git"><a href="#3、报错：ERROR-Deployer-not-found-git" class="headerlink" title="3、报错：ERROR Deployer not found: git"></a>3、报错：ERROR Deployer not found: git</h1><p><strong>解决方法</strong></p><ol><li>这是因为你还没有安装hexo-deployer-git插件（Hexo 3.0以上版本默认是未安装的）。<br>因此你需要手动安装：</li></ol><p>$ npm install hexo-deployer-git –save  # 安装此插件<br>$ hexo d  # 安装完成后重新输入部署命令，则成功部署</p><hr><h1 id="4、Hexo-server报错TypeError-Cannot-read-property-‘utcOffset’-of-null解决方法"><a href="#4、Hexo-server报错TypeError-Cannot-read-property-‘utcOffset’-of-null解决方法" class="headerlink" title="4、Hexo server报错TypeError: Cannot read property ‘utcOffset’ of null解决方法"></a>4、Hexo server报错TypeError: Cannot read property ‘utcOffset’ of null解决方法</h1><p><strong>解决方法</strong></p><ol><li>发现_config.yml中的时区timezone被改成了beijing</li><li>解决办法就是把timezone改成 Asia/Shanghai 就好了</li></ol><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1、hexo报找不到Git库&quot;&gt;&lt;a href=&quot;#1、hexo报找不到Git库&quot; class=&quot;headerlink&quot; title=&quot;1、hexo报找不到Git库&quot;&gt;&lt;/a&gt;1、hexo报找不到Git库&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;解决方法：&lt;/strong&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/05/30/hello-world/"/>
+    <id>http://yoursite.com/2019/05/30/hello-world/</id>
+    <published>2019-05-30T08:42:50.288Z</published>
+    <updated>2019-05-30T08:42:50.290Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

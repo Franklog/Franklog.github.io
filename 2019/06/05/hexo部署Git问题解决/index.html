@@ -7,15 +7,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 迪哥私人博客</title>
+  <title>hexo部署Git问题解决 | 迪哥私人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="迪哥私人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="1、hexo报找不到Git库解决方法：  Repository name填写时，必须是以github.io结尾 deploy:type: git repo: https://github.com/Repository name/Repository name.github.io.git branch: master    2、报错：spawn git ENOENTError: spawn git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo部署Git问题解决">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/hexo部署Git问题解决/index.html">
 <meta property="og:site_name" content="迪哥私人博客">
+<meta property="og:description" content="1、hexo报找不到Git库解决方法：  Repository name填写时，必须是以github.io结尾 deploy:type: git repo: https://github.com/Repository name/Repository name.github.io.git branch: master    2、报错：spawn git ENOENTError: spawn git">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/oZzwhzB.png">
+<meta property="og:updated_time" content="2019-06-05T03:16:36.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="迪哥私人博客">
+<meta name="twitter:title" content="hexo部署Git问题解决">
+<meta name="twitter:description" content="1、hexo报找不到Git库解决方法：  Repository name填写时，必须是以github.io结尾 deploy:type: git repo: https://github.com/Repository name/Repository name.github.io.git branch: master    2、报错：spawn git ENOENTError: spawn git">
+<meta name="twitter:image" content="https://i.imgur.com/oZzwhzB.png">
   
     <link rel="alternative" href="/atom.xml" title="迪哥私人博客" type="application/atom+xml">
   
@@ -152,76 +158,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-hexo部署Git问题解决" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      hexo部署Git问题解决
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/05/hexo部署Git问题解决/" class="archive-article-date">
+
+        
+        <a href="/2019/06/05/hexo部署Git问题解决/" class="archive-article-date">
   	<time datetime="2019-06-05T01:11:06.401Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/05/hexo部署Git问题解决/">hexo部署Git问题解决</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、hexo报找不到Git库"><a href="#1、hexo报找不到Git库" class="headerlink" title="1、hexo报找不到Git库"></a>1、hexo报找不到Git库</h1><p><strong>解决方法：</strong></p>
+<ol>
+<li>Repository name填写时，必须是以github.io结尾</li>
+<li>deploy:<pre><code>type: git
+repo: https://github.com/Repository name/Repository name.github.io.git
+branch: master
+</code></pre><img src="https://i.imgur.com/oZzwhzB.png" alt></li>
+</ol>
+<hr>
+<h1 id="2、报错：spawn-git-ENOENT"><a href="#2、报错：spawn-git-ENOENT" class="headerlink" title="2、报错：spawn git ENOENT"></a>2、报错：spawn git ENOENT</h1><p>Error: spawn git ENOENT      at exports._errnoException (util.js:746:11)      at Process.ChildProcess._handle.onexit (child_process.js:1053:32)      at child_process.js:1144:20)      at process._tickCallback (node.js:355:11)</p>
+<p><strong>解决方法</strong></p>
+<ol>
+<li>未添加Git环境变量引起，添加Git与git管理库的环境变量即可；</li>
+</ol>
+<hr>
+<h1 id="3、报错：ERROR-Deployer-not-found-git"><a href="#3、报错：ERROR-Deployer-not-found-git" class="headerlink" title="3、报错：ERROR Deployer not found: git"></a>3、报错：ERROR Deployer not found: git</h1><p><strong>解决方法</strong></p>
+<ol>
+<li>这是因为你还没有安装hexo-deployer-git插件（Hexo 3.0以上版本默认是未安装的）。<br>因此你需要手动安装：</li>
+</ol>
+<p>$ npm install hexo-deployer-git –save  # 安装此插件<br>$ hexo d  # 安装完成后重新输入部署命令，则成功部署</p>
+<hr>
+<h1 id="4、Hexo-server报错TypeError-Cannot-read-property-‘utcOffset’-of-null解决方法"><a href="#4、Hexo-server报错TypeError-Cannot-read-property-‘utcOffset’-of-null解决方法" class="headerlink" title="4、Hexo server报错TypeError: Cannot read property ‘utcOffset’ of null解决方法"></a>4、Hexo server报错TypeError: Cannot read property ‘utcOffset’ of null解决方法</h1><p><strong>解决方法</strong></p>
+<ol>
+<li>发现_config.yml中的时区timezone被改成了beijing</li>
+<li>解决办法就是把timezone改成 Asia/Shanghai 就好了</li>
+</ol>
+<hr>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/05/hexo部署Git问题解决/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/30/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-30T08:42:50.288Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/30/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -244,8 +356,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
